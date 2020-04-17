@@ -16,6 +16,11 @@ const List = props =>{
         dispatch(removeSmurf(e.target.value))    
     }
 
+    // const handleDelete = e=>{
+    //     e.preventDefault();
+    //     props.removeSmurf({id: e.target.value})
+    // }
+
     return(
         <div>
             <div className ="list">

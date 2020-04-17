@@ -11,7 +11,7 @@ const Form = (props) => {
     e.preventDefault();
     props.addSmurf(addedSmurf);
     setAddedSmurf({
-      ...newSmurf,
+      ...addedSmurf,
       [e.target.name]: e.target.value,
     });
   };

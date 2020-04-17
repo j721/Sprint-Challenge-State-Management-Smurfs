@@ -1,5 +1,13 @@
 import axios from 'axios';
 
+export const FETCH_DATA_START ="FETCH_DATA_START";
+export const FETCH_DATA_SUCCESS ="FETCH_DATA_SUCCESS";
+export const FETCH_DATA_FAILURE ="FETCH_DATA_FAILURE";
+
+export const POST_DATA_START ="POST_DATA_START";
+export const POST_DATA_SUCCESS ="POST_DATA_SUCCESS";
+export const POST_DATA_FAILURE ="POST_DATA_FAILURE";
+
 export const fetchSmurfs = () =>dispatch=>{
     dispatch({type: FETCH_DATA_START});
 
@@ -28,4 +36,4 @@ export const addSmurf = newSmurf =>dispatch=>{
         console.log('post data failed to return', err);
         dispatch({type: POST_DATA_FAILURE, payload: err })
     })
-}
+};

@@ -5,6 +5,7 @@ const Form = (props) => {
     name: "",
     age: "",
     height: "",
+    id: Date.now()
   });
 
   const handleSubmit = (e) => {

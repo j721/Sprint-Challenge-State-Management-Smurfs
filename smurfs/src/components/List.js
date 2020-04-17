@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
-import {connect} from 'react-redux';
+import {connect, useDispatch} from 'react-redux';
 
-
-import {fetchSmurfs, addSmurf} from '../actions/action';
+import {fetchSmurfs, addSmurf, removeSmurf} from '../actions/action';
 import Form from './Form';
 
 const List = props =>{
     const smurfProps = props.fetchSmurfs;
 
     useEffect(()=>{smurfProps()}, [smurfProps]);
+
+    const dispatch = useDispatch(); 
+
+    const handleDelete =e =>{
+        e.preventDefault();
+        dispatch(removeSmurf(e.target.value))    
+    }
 
     return(
         <div>
@@ -18,6 +24,9 @@ const List = props =>{
                         <p>Name: {smurf.name}</p>
                         <p>Age: {smurf.age}</p>
                         <p>Height: {smurf.height}</p>
+
+                        <button className ="delete" 
+                        onClick ={handleDelete} value ={smurf.id}>Remove {smurf.name} Smurf</button>
                     </div>
                 ))}
             </div>

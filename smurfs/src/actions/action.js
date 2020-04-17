@@ -24,10 +24,10 @@ export const fetchSmurfs = () =>dispatch=>{
     });
 }
 
-export const addSmurf = newSmurf =>dispatch=>{
+export const addSmurf = addedSmurf =>dispatch=>{
     dispatch({type: POST_DATA_START});
 
-    axios.post("http://localhost:3333/smurfs")
+    axios.post("http://localhost:3333/smurfs", addedSmurf)
     .then(res=>{
         console.log("post data returned", res);
         dispatch({type: POST_DATA_SUCCESS, payload: res.data});

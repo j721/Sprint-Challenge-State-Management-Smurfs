@@ -54,12 +54,10 @@ return(
                     value ={addedSmurf.height}
                 />
             </div>
-
+                <button className ="submit" type ="submit">Create your Smurf!</button>
         </form>
     </div>
-)
-
-
+    )
 
 }//end of Form component
 
